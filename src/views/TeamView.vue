@@ -2,18 +2,18 @@
 <div class="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4" v-if="getTeam">
 
   <div class="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
-    <img class="w-full" alt="image of a girl posing" :src=getTeam.logo />
-    <img class="mt-6 w-full" alt="image of a girl posing" src="https://i.ibb.co/qxkRXSq/component-image-two.png" />
+    <img class="w-full" alt="image of a team logo" :src=getTeam.logo />
+    <img v-if="getTeam.stade_pic" class="mt-6 " alt="image of ateam stadium" :src=getTeam.stade_pic />
   </div>
-  <!-- <div class="md:hidden">
-    <img class="w-full" alt="image of a girl posing" src="https://i.ibb.co/QMdWfzX/component-image-one.png" />
+  <div class="md:hidden">
+    <img class="w-full" alt="image of a team logo" :src=getTeam.logo />
     <div class="flex items-center justify-between mt-3 space-x-4 md:space-x-0">
-      <img alt="image-tag-one" class="md:w-48 md:h-48 w-full" src="https://i.ibb.co/cYDrVGh/Rectangle-245.png" />
+      <img v-if="getTeam.stade_pic" class="md:w-48 md:h-48 w-full " alt="image of ateam stadium" :src=getTeam.stade_pic />
       <img alt="image-tag-one" class="md:w-48 md:h-48 w-full" src="https://i.ibb.co/f17NXrW/Rectangle-244.png" />
       <img alt="image-tag-one" class="md:w-48 md:h-48 w-full" src="https://i.ibb.co/cYDrVGh/Rectangle-245.png" />
       <img alt="image-tag-one" class="md:w-48 md:h-48 w-full" src="https://i.ibb.co/f17NXrW/Rectangle-244.png" />
     </div>
-  </div> -->
+  </div>
   <div class="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
     <div class="border-b border-gray-200 pb-6">
       <h1 class="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">{{ getTeam.name }}</h1>
@@ -28,6 +28,7 @@
     <reseau v-if="getTeam.facebook" :cle="'Facebook'" :valeur="getTeam.facebook"/>
     <reseau :cle="'Twitter'" :valeur="getTeam.twitter"/>
     <reseau :cle="'Instagram'" :valeur="getTeam.instagram"/>
+    <reseau v-if="getTeam.youtube" :cle="'Youtube'" :valeur="getTeam.youtube"/>
     <!-- <div>
       <p class="xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 dark:text-gray-300 mt-7">It is a long established fact that a reader will be distracted by thereadable content of a page when looking at its layout. The point of usingLorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
       <p class="text-base leading-4 mt-7 text-gray-600 dark:text-gray-300">Product Code: 8BN321AF2IF0NYA</p>
