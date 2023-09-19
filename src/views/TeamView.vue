@@ -2,8 +2,8 @@
 <div class="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4" v-if="getTeam">
 
   <div class="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
-    <img class="w-full" alt="image of a team logo" :src=getTeam.logo />
-    <img v-if="getTeam.stade_pic" class="mt-6 " alt="image of ateam stadium" :src=getTeam.stade_pic />
+    <img class="w-full" alt="image of a team logo" :src="'//localhost:8000/storage/'+getTeam.logo" />
+    <img v-if="getTeam.stade_pic" class="mt-6 " alt="image of a team stadium" :src="'//localhost:8000/storage/'+getTeam.stade_pic" />
   </div>
   <div class="md:hidden">
     <img class="w-full" alt="image of a team logo" :src=getTeam.logo />

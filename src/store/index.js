@@ -1,7 +1,7 @@
 import { createStore } from 'vuex'
 import axios from 'axios';
 
-const url = 'https://api-championship.fr/api'
+const url = 'http://127.0.0.1:8000/api'
 
 export default createStore({
 

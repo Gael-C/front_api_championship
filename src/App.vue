@@ -1,7 +1,7 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
+    <router-link to="/">Accueil</router-link> |
+    <router-link to="/leagues">Les championnats</router-link> |
     <router-link to="/teams">Les équipes</router-link>
   </nav>
   <router-view/>

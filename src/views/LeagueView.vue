@@ -2,7 +2,7 @@
     <div class="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4" v-if="getLeague">
 
         <div class="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
-            <img class="w-full" alt="image of a girl posing" :src=getLeague.logo />
+            <img class="w-full" alt="image of a girl posing" :src="'//localhost:8000/storage/'+getLeague.logo" />
             <img class="mt-6 w-full" alt="image of a girl posing" src="https://i.ibb.co/qxkRXSq/component-image-two.png" />
         </div>
         <!-- <div class="md:hidden">
@@ -34,7 +34,7 @@
                             <tbody class="text-sm divide-y divide-gray-100">
                                 <tr v-for="teams in getLeague.teams">
                                     <td class="p-2 whitespace-nowrap">
-                                        <div class="font-medium text-center text-gray-800">{{teams.name}}</div>
+                                        <router-link :to="'/team/'+teams.id"><div class="font-medium text-center text-gray-800">{{teams.name}}</div></router-link>
                                     </td>
                                 </tr>
                             </tbody>
