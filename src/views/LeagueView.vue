@@ -2,21 +2,21 @@
     <div class="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4" v-if="getLeague">
 
         <div class="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
-            <img class="w-full" alt="image of a girl posing" :src="'//localhost:8000/storage/'+getLeague.logo" />
-            <img class="mt-6 w-full" alt="image of a girl posing" src="https://i.ibb.co/qxkRXSq/component-image-two.png" />
+            <img class="w-full" alt="image of a girl posing" :src="'https://api-championship.fr/public/storage/'+getLeague.logo" />
+            <!-- <img class="mt-6 w-full" alt="image of a girl posing" src="https://i.ibb.co/qxkRXSq/component-image-two.png" /> -->
         </div>
-        <!-- <div class="md:hidden">
-        <img class="w-full" alt="image of a girl posing" src="https://i.ibb.co/QMdWfzX/component-image-one.png" />
+        <div class="md:hidden">
+        <img class="w-full" alt="image of a girl posing" :src="'https://api-championship.fr/public/storage/'+getLeague.logo"  />
         <div class="flex items-center justify-between mt-3 space-x-4 md:space-x-0">
           <img alt="image-tag-one" class="md:w-48 md:h-48 w-full" src="https://i.ibb.co/cYDrVGh/Rectangle-245.png" />
           <img alt="image-tag-one" class="md:w-48 md:h-48 w-full" src="https://i.ibb.co/f17NXrW/Rectangle-244.png" />
           <img alt="image-tag-one" class="md:w-48 md:h-48 w-full" src="https://i.ibb.co/cYDrVGh/Rectangle-245.png" />
           <img alt="image-tag-one" class="md:w-48 md:h-48 w-full" src="https://i.ibb.co/f17NXrW/Rectangle-244.png" />
         </div>
-      </div> -->
+      </div>
         <div class="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
             <div class="border-b border-gray-200 pb-6">
-                <h1 class="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">{{
+                <h1 class="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800">{{
                     getLeague.name }}</h1>
             </div>
             <detail :cle="'Création'" :valeur="getLeague.creation" />
@@ -33,9 +33,7 @@
                         <table class="table-auto w-full">
                             <tbody class="text-sm divide-y divide-gray-100">
                                 <tr v-for="teams in getLeague.teams">
-                                    <td class="p-2 whitespace-nowrap">
-                                        <router-link :to="'/team/'+teams.id"><div class="font-medium text-center text-gray-800">{{teams.name}}</div></router-link>
-                                    </td>
+                                    <tableComponent :key="teams.team_id" :id="teams.team_id" :name="teams.name" />
                                 </tr>
                             </tbody>
                         </table>
@@ -66,17 +64,19 @@
         </div>
     </div>
 </template>
-    
+
 <script>
 import detail from '@/components/details.vue';
 import reseau from '@/components/reseaux.vue';
+import tableComponent from '@/components/tableComponent.vue';
 
 
 export default {
     name: 'LeagueView',
     components: {
         detail,
-        reseau
+        reseau,
+        tableComponent
     },
     mounted(){
         this.$store.dispatch("getTeamsList")
