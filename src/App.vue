@@ -1,8 +1,7 @@
 <template>
   <nav>
-    <router-link to="/">Accueil</router-link> |
-    <router-link to="/leagues">Les championnats</router-link> |
-    <router-link to="/teams">Les équipes</router-link>
+    <router-link to="/">Les équipes</router-link> |
+    <router-link to="/leagues">Les championnats</router-link>
   </nav>
   <router-view/>
 <footer class="py-6 text-gray-900">
