@@ -1,6 +1,6 @@
 <template>
    <div class="py-4 border-b border-gray-200 flex items-center justify-between">
-      <p class="text-base leading-4 text-gray-800 dark:text-gray-300">{{ cle}}</p>
+      <p class="text-base leading-4 text-gray-800 dark:text-300">{{ cle}}</p>
       <div class="flex items-center justify-center">
         <p v-if="cle !== 'Site Web'" class="text-sm leading-none text-gray-600 dark:text-dark-300 mr-3">{{ valeur }}</p>
         <a v-if="cle === 'Site Web'" :href="valeur"   target="_blank" rel="noopener noreferrer" title="Website" class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 hover:bg-blue-600 duration-150">

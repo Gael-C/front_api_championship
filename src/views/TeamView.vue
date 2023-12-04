@@ -7,12 +7,12 @@
   </div>
   <div class="md:hidden">
     <img class="w-full" alt="image of a team logo" :src="'https://api-championship.fr/public/storage/'+getTeam.logo" />
-    <!-- <div class="flex items-center justify-between mt-3 space-x-4 md:space-x-0">
+    <div class="flex items-center justify-between mt-3 space-x-4 md:space-x-0">
       <img v-if="getTeam.stade_pic" class="md:w-48 md:h-48 w-full " alt="image of ateam stadium" :src=getTeam.stade_pic />
       <img alt="image-tag-one" class="md:w-48 md:h-48 w-full" src="https://i.ibb.co/f17NXrW/Rectangle-244.png" />
       <img alt="image-tag-one" class="md:w-48 md:h-48 w-full" src="https://i.ibb.co/cYDrVGh/Rectangle-245.png" />
       <img alt="image-tag-one" class="md:w-48 md:h-48 w-full" src="https://i.ibb.co/f17NXrW/Rectangle-244.png" />
-    </div> -->
+    </div>
   </div>
   <div class="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
     <div class="border-b border-gray-200 pb-6">

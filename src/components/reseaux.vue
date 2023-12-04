@@ -1,6 +1,6 @@
 <template>
     <div class="py-4 border-b border-gray-200 flex items-center justify-between">
-        <p class="text-base leading-4 text-gray-800 dark:text-gray-300">{{ cle }}</p>
+        <p class="text-base leading-4 text-gray-800 dark:text-300">{{ cle }}</p>
         <div class="flex items-center justify-center">
             <a v-if="cle === 'Facebook'" :href="valeur"  target="_blank" rel="noopener noreferrer" title="Facebook" class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 hover:bg-blue-600 duration-150 text-gray-50">    
                 <svg  class=" w-5 h-5 svg" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
