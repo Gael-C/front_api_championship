@@ -3,9 +3,9 @@
         <div class="grid justify-center  lg:justify-between">
             <div class="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6">
                 <span>Copyright © 2023 by Gaël </span>
-                <a rel="noopener noreferrer" href="#">
+                <!-- <a rel="noopener noreferrer" href="#">
                     <span>Remerciements</span>
-                </a>
+                </a> -->
             </div>
             <div class="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
                 <a rel="noopener noreferrer" href="mailto:gael.coupe@api-championship.fr" title="Email" class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 hover:bg-blue-600 duration-150 text-gray-50">
