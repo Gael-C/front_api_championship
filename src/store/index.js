@@ -14,9 +14,8 @@ export default createStore({
       return state.teams.find( team => team.id === Number( id ) )
     },
     getLeagueById: (state) => (id) => {
-      console.log(state.leagues.find( league => league.id === Number( id )))
       return state.leagues.find( league => league.id === Number( id ) )
-    }
+    },
   },
   mutations: {
     getTeamsListMutation( state, teamsData )
