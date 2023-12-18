@@ -7,6 +7,9 @@ export default {
     components: {
     },
     mounted() {
+        this.$store.dispatch("getLeaguesList")
+        this.$store.dispatch("getTeamsList")
+        this.$store.dispatch("getMatchWeekList")
     }
 }
 </script>

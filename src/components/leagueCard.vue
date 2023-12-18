@@ -31,7 +31,7 @@ export default {
     name: 'Card',
     props: {
     id: {
-        type: Number,
+        type: String,
         required: true
     },
     logo: {

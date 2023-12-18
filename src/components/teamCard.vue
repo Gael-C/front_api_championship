@@ -30,8 +30,8 @@ img{
 export default {
     name: 'Card',
     props: {
-    id: {
-        type: Number,
+        id: {
+        type: String,
         required: true
     },
     logo: {

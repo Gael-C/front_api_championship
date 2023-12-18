@@ -1,44 +1,29 @@
 <template>
-    <v-table class="table-auto ">
-    <thead slot="head">
-        <v-th sortkey="classement"></v-th>
-        <th></th>
-        <th>Pts</th>
-        <th>B</th>
-        <th>V</th>
-        <th>N</th>
-        <th>D</th>
-        <th>P</th>
-        <th>C</th>
-        <th>D</th>
-    </thead>
-    <tbody class="text-sm divide-y divide-gray-100">
+    <router-link :to="{ name:'team_detail', params: { id }}">
         <tr>
-          <td sortkey>{{ classement }}</td>
-          <td>{{ nom }}</td>
-          <td>{{ points }}</td>
-          <td>{{ bonus }}</td>
-          <td>{{ victoires }}</td>
-          <td>{{ nuls }}</td>
-          <td>{{ defaites }}</td>
-          <td>{{ pour }}</td>
-          <td>{{ contre }}</td>
-          <td>{{ diff }}</td>
+            <td class="py-2 px-4 border-b">{{ nom }}</td>
+            <td class="py-2 px-4 border-b">{{ points }}</td>
+            <td class="py-2 px-4 border-b">{{ bonus }}</td>
+            <td class="py-2 px-4 border-b">{{ victoires }}</td>
+            <td class="py-2 px-4 border-b">{{ nuls }}</td>
+            <td class="py-2 px-4 border-b">{{ defaites }}</td>
+            <td class="py-2 px-4 border-b">{{ pour }}</td>
+            <td class="py-2 px-4 border-b">{{ contre }}</td>
+            <td class="py-2 px-4 border-b">{{ diff }}</td>
         </tr>
-    </tbody>
-  </v-table>
+    </router-link>
 </template>
 
 <script>
 export default {
     name: 'classementComponent',
     props: {
-        classement: {
+        Id: {
         type: Number,
         required: true
         },
         nom: {
-            type: String,
+            type: Number,
             required: true
         },
         points: {
