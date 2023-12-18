@@ -86,35 +86,35 @@
   </div>
   <div class="md:hidden mt-5">
     <div class="overflow-x-auto">
-                        <table class="text-sm divide-y divide-gray-100"  v-for="clasmt in getTeam.classment">
-                            <tr>
-                              <th>{{ getLeagueName(clasmt.league_id) }}</th>
-                            </tr>
-                             <tr class="border-b font-medium dark:border-neutral-500">
-                                <th class="py-2 px-4 border-b">#</th>
-                                <th class="py-2 px-4 border-b">Pts</th>
-                                <th class="py-2 px-4 border-b">B</th>
-                                <th class="py-2 px-4 border-b">V</th>
-                                <th class="py-2 px-4 border-b">N</th>
-                                <th class="py-2 px-4 border-b">D</th>
-                                <th class="py-2 px-4 border-b">P</th>
-                                <th class="py-2 px-4 border-b">C</th>
-                                <th class="py-2 px-4 border-b">D</th>
-                            </tr>
-                            <tbody>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">{{ clasmt.classement }}</td>
-                                    <td class="py-2 px-4 border-b">{{ clasmt.points }}</td>
-                                    <td class="py-2 px-4 border-b">{{ clasmt.bonus }}</td>
-                                    <td class="py-2 px-4 border-b">{{ clasmt.victoires }}</td>
-                                    <td class="py-2 px-4 border-b">{{ clasmt.nuls }}</td>
-                                    <td class="py-2 px-4 border-b">{{ clasmt.défaites }}</td>
-                                    <td class="py-2 px-4 border-b">{{ clasmt.pour }}</td>
-                                    <td class="py-2 px-4 border-b">{{ clasmt.contre }}</td>
-                                    <td class="py-2 px-4 border-b">{{ clasmt.goal_average }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+      <table class="text-sm divide-y divide-gray-100"  v-for="clasmt in getTeam.classment">
+          <tr>
+            <th>{{ getLeagueName(clasmt.league_id) }}</th>
+          </tr>
+           <tr class="border-b font-medium dark:border-neutral-500">
+              <th class="py-2 px-4 border-b">#</th>
+              <th class="py-2 px-4 border-b">Pts</th>
+              <th class="py-2 px-4 border-b">B</th>
+              <th class="py-2 px-4 border-b">V</th>
+              <th class="py-2 px-4 border-b">N</th>
+              <th class="py-2 px-4 border-b">D</th>
+              <th class="py-2 px-4 border-b">P</th>
+              <th class="py-2 px-4 border-b">C</th>
+              <th class="py-2 px-4 border-b">D</th>
+          </tr>
+          <tbody>
+              <tr>
+                  <td class="py-2 px-4 border-b">{{ clasmt.classement }}</td>
+                  <td class="py-2 px-4 border-b">{{ clasmt.points }}</td>
+                  <td class="py-2 px-4 border-b">{{ clasmt.bonus }}</td>
+                  <td class="py-2 px-4 border-b">{{ clasmt.victoires }}</td>
+                  <td class="py-2 px-4 border-b">{{ clasmt.nuls }}</td>
+                  <td class="py-2 px-4 border-b">{{ clasmt.défaites }}</td>
+                  <td class="py-2 px-4 border-b">{{ clasmt.pour }}</td>
+                  <td class="py-2 px-4 border-b">{{ clasmt.contre }}</td>
+                  <td class="py-2 px-4 border-b">{{ clasmt.goal_average }}</td>
+              </tr>
+          </tbody>
+      </table>
     </div>
     <br>
     <select class="mt-5" @change="getMatchWeeks($event)">
