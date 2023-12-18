@@ -13,7 +13,7 @@
           </tr> -->
             <tr class="border-b font-medium dark:border-neutral-500">
               <th class="py-2 px-4 border-b">Domicile</th>
-              <th class="py-2 px-2 border-b">Résultat</th>
+              <th class="py-2 px-4 border-b">Résultat</th>
               <th class="py-2 px-4 border-b">Extérieur</th>
           </tr>
           <tbody>
