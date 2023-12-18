@@ -166,9 +166,6 @@ export default {
           },
           
     },
-    mounted() {
-        this.$store.dispatch("getMatchWeekList")
-    },
     methods: {
       getMatchWeeks(event){
         this.teamMatches = []
