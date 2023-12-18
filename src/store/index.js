@@ -7,14 +7,24 @@ export default createStore({
 
   state: {
     teams : [],
-    leagues : []
+    leagues : [],
+    matchWeeks : []
   },
   getters: {
+    getTeamBySlug: (state) => (id) => {
+      return state.teams.find( team => team.slug === id  )
+    },
     getTeamById: (state) => (id) => {
-      return state.teams.find( team => team.id === Number( id ) )
+      return state.teams.find( team => team.id === id  )
+    },
+    getLeagueBySLug: (state) => (id) => {
+      return state.leagues.find( league => league.slug === id  )
     },
     getLeagueById: (state) => (id) => {
-      return state.leagues.find( league => league.id === Number( id ) )
+      return state.leagues.find( league => league.id === id  )
+    },
+    getMatchWeekById: (state) => (id) => {
+      return state.matchWeeks.find( matchWeek => matchWeek.id === Number( id ) )
     }
   },
   mutations: {
@@ -34,15 +44,30 @@ export default createStore({
       }
 
     },
-    getLeaguesListMutation(state, leaguesData)
+    getMatchWeekListMutation(state, matchWeeksData)
+    {
+      for( let matchWeek of matchWeeksData )
+      {
+        this.commit("addMatchWeekMutation", matchWeek)
+      }
+    },
+    addMatchWeekMutation(state, matchWeekData)
+    {
+      let matchWeekIndex = state.leagues.findIndex( matchWeek => matchWeek.id === matchWeekData.id );
+
+      if( matchWeekIndex < 0 )
+      {
+        state.matchWeeks.push( matchWeekData );
+      }
+    },
+    getLeaguesListMutation( state, leaguesData )
     {
       for( let league of leaguesData )
       {
         this.commit("addLeagueMutation", league)
       }
     },
-    addLeagueMutation(state, leagueData)
-    {
+    addLeagueMutation(state, leagueData){
       let leagueIndex = state.leagues.findIndex( league => league.id === leagueData.id );
 
       if( leagueIndex < 0 )
@@ -71,12 +96,22 @@ export default createStore({
     {
       try {
         const response = await axios.get(`${url}/leagues`)
-        console.log(response.data);
 
         context.commit( 'getLeaguesListMutation', response.data );
         
       } catch (error) {
-        console.error(err)
+        console.error(error)
+      }
+    },
+    async getMatchWeekList(context)
+    {
+      try {
+        const response = await axios.get(`${url}/matchWeek`)
+        console.log(response.data)
+        context.commit( 'getMatchWeekListMutation', response.data );
+        
+      } catch (error) {
+        console.error(error)
       }
     }
   },

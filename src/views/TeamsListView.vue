@@ -2,7 +2,7 @@
   <section class="py-10">
     <div class="mx-auto grid max-w-6  grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
       <card v-for="team in $store.state.teams"
-      :key="team.id" :id="team.id" :logo="team.logo" :name="team.name" ></card>
+      :key="team.slug" :id="team.slug" :logo="team.logo" :name="team.name" ></card>
     </div>
   </section>
 
@@ -18,6 +18,7 @@ export default {
   },
   mounted() {
         this.$store.dispatch("getTeamsList")
+        this.$store.dispatch("getLeaguesList")
     }
 }
 </script>
