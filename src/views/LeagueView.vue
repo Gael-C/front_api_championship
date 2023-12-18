@@ -1,6 +1,6 @@
 <template>
     <div class="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4" v-if="getLeague">
-        <div class="xl:w-2/6 lg:w-2/5 w-80 md:block hidden" style="border: 5px solid red;">
+        <div class="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
             <img class="w-9/12 mx-auto" alt="logo of the league"
                 :src="'https://api-championship.fr/public/storage/' + getLeague.logo" />
             
@@ -50,7 +50,7 @@
                 </header>
                  <div>
                     <div class="overflow-x-auto">
-                        <table class="text-sm divide-y divide-gray-100" style="border: 5px solid red;">
+                        <table class="text-sm divide-y divide-gray-100">
                              <tr class="border-b font-medium dark:border-neutral-500">
                                 <th class="py-2 px-4 border-b">Équipe</th>
                                 <th class="py-2 px-4 border-b">Pts</th>
@@ -114,10 +114,10 @@ export default {
             return this.$store.getters.getLeagueBySLug(this.$route.params.id);
         },
         getLCTeam() {
-            return this.$store.getters.getTeamBySlug(this.getLeague.last_champion);
+            return this.$store.getters.getTeamById(this.getLeague.last_champion);
         },
         getMSTeam() {
-            return this.$store.getters.getTeamBySlug(this.getLeague.most_successfull);
+            return this.$store.getters.getTeamById(this.getLeague.most_successfull);
         },
 
     },
