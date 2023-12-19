@@ -161,12 +161,12 @@ export default {
         },
         getMatchWeeks(event){
             this.Matches = []
-            document.getElementById('matcjes).style.visibility = 'hidden'
+            document.getElementById('matches).style.visibility = 'hidden'
             let matchWeek = this.$store.getters.getMatchWeekById(event.target.value);
             matchWeek.matches.forEach(element => {
             if (element.league_id=== this.getLeague.id) {
                 this.Matches.push(element)
-                document.getElementById('matcjes).style.visibility = 'visible'
+                document.getElementById('matches).style.visibility = 'visible'
             }
         });
         }      
