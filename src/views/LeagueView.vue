@@ -8,7 +8,7 @@
       <option value="" selected>Choisissez une journée</option>
       <option class="text-center" v-for="matchWeek in $store.state.matchWeeks" :value="matchWeek.id">{{ matchWeek.match_week_number }}</option>
     </select>
-    <table class="text-sm divide-y divide-gray-100 mt-5" v-for="match in Matches">
+    <table class="text-sm divide-y divide-gray-100 mt-5" id="matches" hidden>
           <!-- <tr>
             <th>{{ match.match_week_number }}</th>
           </tr> -->
@@ -18,7 +18,7 @@
               <th class="py-2 px-4 border-b">Extérieur</th>
           </tr>
           <tbody>
-              <tr >
+              <tr v-for="match in Matches >
                   <td class="py-2 px-4 border-b"> {{ getTeamName(match.home_team_id) }}</td>
                   <td class="py-2 border-b">({{ match.home_team_tries }}){{ match.home_team_result }} - {{ match.away_team_result }}({{match.away_team_tries}})</td>
                   <td class="py-2 px-4 border-b">{{ getTeamName(match.away_team_id) }}</td>
@@ -160,11 +160,13 @@ export default {
             };
         },
         getMatchWeeks(event){
-        this.Matches = []
-        let matchWeek = this.$store.getters.getMatchWeekById(event.target.value);
-        matchWeek.matches.forEach(element => {
+            this.Matches = []
+            document.getElementById('matcjes).style.visibility = 'hidden'
+            let matchWeek = this.$store.getters.getMatchWeekById(event.target.value);
+            matchWeek.matches.forEach(element => {
             if (element.league_id=== this.getLeague.id) {
                 this.Matches.push(element)
+                document.getElementById('matcjes).style.visibility = 'visible'
             }
         });
         }      
