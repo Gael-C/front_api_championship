@@ -81,27 +81,27 @@
                         </table>
                     </div> 
                 </div>
-                 <div class="md:hidden mt-5">
-                      <select @change="getMatchWeeks($event)" class="mt-5">
-                          <option value="" selected>Choisissez une journée</option>
-                          <option class="text-center" v-for="matchWeek in $store.state.matchWeeks" :value="matchWeek.id">{{ matchWeek.match_week_number }}</option>
-                        </select>
-                       <table class="text-sm divide-y divide-gray-100 mt-5 w-full">
-                            <tr class="border-b font-medium dark:border-neutral-500">
-                              <th class="py-2 px-4 border-b">Domicile</th>
-                              <th class="py-2 px-4 border-b">Résultat</th>
-                              <th class="py-2 px-4 border-b">Extérieur</th>
-                          </tr>
-                          <tbody>
-                              <tr v-for="match in Matches" >
-                                  <td class="py-2 px-4 border-b"> {{ getTeamName(match.home_team_id) }}</td>
-                                  <td class="py-2 border-b">({{ match.home_team_tries }}){{ match.home_team_result }} - {{ match.away_team_result }}({{match.away_team_tries}})</td>
-                                  <td class="py-2 px-4 border-b">{{ getTeamName(match.away_team_id) }}</td>
-                              </tr>
-                          </tbody>
-                    </table>
-                 </div>
             </div>
+             <div class="md:hidden mt-5">
+                  <select @change="getMatchWeeks($event)" class="mt-5">
+                      <option value="" selected>Choisissez une journée</option>
+                      <option class="text-center" v-for="matchWeek in $store.state.matchWeeks" :value="matchWeek.id">{{ matchWeek.match_week_number }}</option>
+                    </select>
+                   <table class="text-sm divide-y divide-gray-100 mt-5 w-full">
+                        <tr class="border-b font-medium dark:border-neutral-500">
+                          <th class="py-2 px-4 border-b">Domicile</th>
+                          <th class="py-2 px-4 border-b">Résultat</th>
+                          <th class="py-2 px-4 border-b">Extérieur</th>
+                      </tr>
+                      <tbody>
+                          <tr v-for="match in Matches" >
+                              <td class="py-2 px-4 border-b"> {{ getTeamName(match.home_team_id) }}</td>
+                              <td class="py-2 border-b">({{ match.home_team_tries }}){{ match.home_team_result }} - {{ match.away_team_result }}({{match.away_team_tries}})</td>
+                              <td class="py-2 px-4 border-b">{{ getTeamName(match.away_team_id) }}</td>
+                          </tr>
+                      </tbody>
+                </table>
+             </div>
         </div>
     </div>
 </template>
