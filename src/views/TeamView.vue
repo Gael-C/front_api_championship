@@ -38,7 +38,7 @@
     <br>
     <select @change="getMatchWeeks($event)" class="mt-auto">
       <option value="" selected>Choisissez une journée</option>
-      <option v-for="matchWeek in $store.state.matchWeeks" :value="matchWeek.id">{{ matchWeek.match_week_number }}</option>
+      <option class="text-center" v-for="matchWeek in $store.state.matchWeeks" :value="matchWeek.id">{{ matchWeek.match_week_number }}</option>
     </select>
     <div class="overflow-x-auto">
       <table class="text-sm divide-y divide-gray-100 w-full" v-for="match in teamMatches">
