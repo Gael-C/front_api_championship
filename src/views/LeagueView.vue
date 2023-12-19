@@ -45,10 +45,6 @@
             <detail v-if="getLCTeam" :cle="'Champion en titre'" :valeur="getLCTeam.name" />
             <detail v-if="getMSTeam" :cle="'Club le plus titré'" :valeur="getMSTeam.name" />
             <br>
-            <select @change="getMatchWeeks($event)" class="mt-5">
-              <option value="" selected>Choisissez une journée</option>
-              <option class="text-center" v-for="matchWeek in $store.state.matchWeeks" :value="matchWeek.id">{{ matchWeek.match_week_number }}</option>
-            </select>
             <div class="w-full max-w-2xl mx-auto bg-white shadow-lg rounded-xl border">
                 <header class="px-5 py-4 border-b border-gray-100">
                     <h2 class="font-semibold text-gray-800">Équipes</h2>
@@ -86,6 +82,10 @@
                     </div> 
                 </div>
                  <div class="md:hidden mt-5">
+                      <select @change="getMatchWeeks($event)" class="mt-5">
+                          <option value="" selected>Choisissez une journée</option>
+                          <option class="text-center" v-for="matchWeek in $store.state.matchWeeks" :value="matchWeek.id">{{ matchWeek.match_week_number }}</option>
+                        </select>
                        <table class="text-sm divide-y divide-gray-100 mt-5 w-full">
                             <tr class="border-b font-medium dark:border-neutral-500">
                               <th class="py-2 px-4 border-b">Domicile</th>
