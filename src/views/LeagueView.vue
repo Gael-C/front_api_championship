@@ -18,7 +18,7 @@
               <th class="py-2 px-4 border-b">Extérieur</th>
           </tr>
           <tbody>
-              <tr v-for="match in Matches >
+              <tr v-for="match in Matches" >
                   <td class="py-2 px-4 border-b"> {{ getTeamName(match.home_team_id) }}</td>
                   <td class="py-2 border-b">({{ match.home_team_tries }}){{ match.home_team_result }} - {{ match.away_team_result }}({{match.away_team_tries}})</td>
                   <td class="py-2 px-4 border-b">{{ getTeamName(match.away_team_id) }}</td>
