@@ -46,9 +46,11 @@ export default createStore({
     },
     getMatchWeekListMutation(state, matchWeeksData)
     {
+      state.matchWeeks = []
       for( let matchWeek of matchWeeksData )
       {
-        this.commit("addMatchWeekMutation", matchWeek)
+        state.matchWeeks.push(matchWeek)
+        // this.commit("addMatchWeekMutation", matchWeek)
       }
     },
     addMatchWeekMutation(state, matchWeekData)
