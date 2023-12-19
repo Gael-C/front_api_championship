@@ -5,7 +5,8 @@
                 :src="'https://api-championship.fr/public/storage/' + getLeague.logo" />
             
     <select @change="getMatchWeeks($event)" class="mt-5">
-      <option v-for="matchWeek in $store.state.matchWeeks" :value="matchWeek.id">{{ matchWeek.match_week_number }}</option>
+      <option value="" selected>Choisissez une journée</option>
+      <option class="text-center" v-for="matchWeek in $store.state.matchWeeks" :value="matchWeek.id">{{ matchWeek.match_week_number }}</option>
     </select>
     <table class="text-sm divide-y divide-gray-100 mt-5">
           <!-- <tr>
@@ -45,7 +46,8 @@
             <detail v-if="getMSTeam" :cle="'Club le plus titré'" :valeur="getMSTeam.name" />
             <br>
             <select @change="getMatchWeeks($event)" class="mt-5">
-              <option v-for="matchWeek in $store.state.matchWeeks" :value="matchWeek.id">{{ matchWeek.match_week_number }}</option>
+              <option value="" selected>Choisissez une journée</option>
+              <option class="text-center" v-for="matchWeek in $store.state.matchWeeks" :value="matchWeek.id">{{ matchWeek.match_week_number }}</option>
             </select>
             <div class="w-full max-w-2xl mx-auto bg-white shadow-lg rounded-xl border">
                 <header class="px-5 py-4 border-b border-gray-100">
