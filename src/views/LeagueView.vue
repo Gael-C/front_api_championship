@@ -8,7 +8,7 @@
       <option value="" selected>Choisissez une journée</option>
       <option class="text-center" v-for="matchWeek in $store.state.matchWeeks" :value="matchWeek.id">{{ matchWeek.match_week_number }}</option>
     </select>
-    <table class="text-sm divide-y divide-gray-100 mt-5" id="matches"  v-for="match in Matches">
+    <table class="text-sm divide-y divide-gray-100 mt-5" v-for="match in Matches">
           <!-- <tr>
             <th>{{ match.match_week_number }}</th>
           </tr> -->
@@ -167,7 +167,6 @@ export default {
                 this.Matches.push(element)
             }
         });
-        document.getElementById('matches').
         }      
     }
 }
