@@ -8,7 +8,7 @@
       <option value="" selected>Choisissez une journée</option>
       <option class="text-center" v-for="matchWeek in $store.state.matchWeeks" :value="matchWeek.id">{{ matchWeek.match_week_number }}</option>
     </select>
-    <table class="text-sm divide-y divide-gray-100 mt-5">
+    <table class="text-sm divide-y divide-gray-100 mt-5" id="matches"  v-for="match in Matches">
           <!-- <tr>
             <th>{{ match.match_week_number }}</th>
           </tr> -->
@@ -18,7 +18,7 @@
               <th class="py-2 px-4 border-b">Extérieur</th>
           </tr>
           <tbody>
-              <tr v-for="match in Matches" >
+              <tr >
                   <td class="py-2 px-4 border-b"> {{ getTeamName(match.home_team_id) }}</td>
                   <td class="py-2 border-b">({{ match.home_team_tries }}){{ match.home_team_result }} - {{ match.away_team_result }}({{match.away_team_tries}})</td>
                   <td class="py-2 px-4 border-b">{{ getTeamName(match.away_team_id) }}</td>
@@ -167,6 +167,7 @@ export default {
                 this.Matches.push(element)
             }
         });
+        document.getElementById('matches').
         }      
     }
 }
