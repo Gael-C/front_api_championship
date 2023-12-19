@@ -8,7 +8,7 @@
       <option value="" selected>Choisissez une journée</option>
       <option class="text-center" v-for="matchWeek in $store.state.matchWeeks" :value="matchWeek.id">{{ matchWeek.match_week_number }}</option>
     </select>
-    <table class="text-sm divide-y divide-gray-100 mt-5" id="matches" hidden>
+    <table class="text-sm divide-y divide-gray-100 mt-5" id="showMatches" hidden>
           <!-- <tr>
             <th>{{ match.match_week_number }}</th>
           </tr> -->
@@ -161,12 +161,11 @@ export default {
         },
         getMatchWeeks(event){
             this.Matches = []
-            document.getElementById('matches).style.visibility = 'hidden'
             let matchWeek = this.$store.getters.getMatchWeekById(event.target.value);
             matchWeek.matches.forEach(element => {
             if (element.league_id=== this.getLeague.id) {
                 this.Matches.push(element)
-                document.getElementById('matches).style.visibility = 'visible'
+                document.getElementById('showMatches).hidden = false;
             }
         });
         }      
