@@ -5,7 +5,7 @@
     <img class="w-9/12 mx-auto" alt="image of a team logo" :src="'https://api-championship.fr/public/storage/'+getTeam.logo" />
     <br>
     <div class="overflow-x-auto">
-      <table class="text-sm divide-y divide-gray-100"  v-for="clasmt in getTeam.classment">
+      <table class="text-sm divide-y divide-gray-100 w-full"  v-for="clasmt in getTeam.classment">
           <tr>
             <th>{{ getLeagueName(clasmt.league_id) }}</th>
           </tr>
@@ -37,6 +37,7 @@
     </div> 
     <br>
     <select @change="getMatchWeeks($event)" class="mt-auto">
+      <option value="" selected>Choisissez une journée</option>
       <option v-for="matchWeek in $store.state.matchWeeks" :value="matchWeek.id">{{ matchWeek.match_week_number }}</option>
     </select>
     <div class="overflow-x-auto">
@@ -118,6 +119,7 @@
     </div>
     <br>
     <select class="mt-5" @change="getMatchWeeks($event)">
+      <option value="" selected>Choisissez une journée</option>
       <option v-for="matchWeek in $store.state.matchWeeks" :value="matchWeek.id">{{ matchWeek.match_week_number }}</option>
     </select> 
     <table class="text-sm divide-y divide-gray-100 w-full" v-for="match in teamMatches">
